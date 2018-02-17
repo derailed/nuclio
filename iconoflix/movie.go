@@ -1,27 +1,25 @@
-package movie
+package iconoflix
 
 import (
 	"io/ioutil"
+	"math/rand"
+	"time"
 
 	"github.com/go-yaml/yaml"
 )
 
-// MOVIES in memory movie corpus
-const MOVIES = `
-movies:
-- name: Home Alone
-  icons:
-  - name: ! "🏡"
-  - name: ! "🍣"
-- name: Terminator
-  icons:
-  - name: ! "🏡"
-  - name: ! "👻"
-- name: Ghost
-  icons:
-  - name: ! "🏡"
-  - name: ! "👻"
-`
+var corpus Movies
+
+// Seeds randomizer and movie db
+func init() {
+	rand.Seed(time.Now().UTC().UnixNano())
+
+	var err error
+	corpus, err = LoadMem()
+	if err != nil {
+		panic(err)
+	}
+}
 
 type (
 	// Icon an emoji representation
@@ -40,6 +38,11 @@ type (
 		Movies []Movie `yaml:"movies"`
 	}
 )
+
+// RandMovie picks a random movie...
+func RandMovie() Movie {
+	return corpus.Movies[rand.Intn(len(corpus.Movies))]
+}
 
 // LoadMem the movie database from memory
 func LoadMem() (d Movies, err error) {
@@ -63,3 +66,22 @@ func LoadFile(path string) (Movies, error) {
 
 	return movies, nil
 }
+
+// ----------------------------------------------------------------------------
+
+// MOVIES in memory movie corpus
+const MOVIES = `
+movies:
+- name: Home Alone
+  icons:
+  - name: ! "🏡"
+  - name: ! "🍣"
+- name: Terminator
+  icons:
+  - name: ! "🏡"
+  - name: ! "👻"
+- name: Ghost
+  icons:
+  - name: ! "🏡"
+  - name: ! "👻"
+`

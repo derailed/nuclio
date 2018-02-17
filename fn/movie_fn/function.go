@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/derailed/nuclio/movie"
 	nuclio "github.com/nuclio/nuclio-sdk-go"
 )
 
@@ -16,8 +15,8 @@ func Handler(context *nuclio.Context, event nuclio.Event) (interface{}, error) {
 	log.Printf("Go called with %s", string(event.GetBody()))
 	log.Println(event.GetID(), event.GetFields(), event.GetPath(), event.GetMethod())
 
-	movies := movie.LoadMem()
-	raw, err := json.Marshal(movies)
+	movie := randMovie()
+	raw, err := json.Marshal(movie)
 	if err != nil {
 		return "", fmt.Errorf("Doh! something went wrong %v", err)
 	}
