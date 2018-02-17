@@ -24,7 +24,7 @@ func init() {
 type (
 	// Icon an emoji representation
 	Icon struct {
-		Name string `yaml:"name"`
+		Emoji string `yaml:"emoji"`
 	}
 
 	// Movie an Iconoflix movie representation
@@ -74,39 +74,39 @@ const MOVIES = `
 movies:
 - name: Home Alone
   icons:
-  - name: ! "🏡"
-  - name: ! "🛀"
+  - emoji: ! "🏡"
+  - emoji: ! "🛀"
 - name: Planes, Trains And Automobiles
   icons:
-  - name: ! "✈️"
-  - name: ! "🚂"
-  - name: ! "🚘"
+  - emoji: ! "✈️"
+  - emoji: ! "🚂"
+  - emoji: ! "🚘"
 - name: The Mechanic
   icons:
-  - name: ! "🚙"
-  - name: ! "🔧"
+  - emoji: ! "🚙"
+  - emoji: ! "🔧"
 - name: Thor
   icons:
-  - name: ! "⚡️"
-  - name: ! "🔨"
+  - emoji: ! "⚡️"
+  - emoji: ! "🔨"
 - name: Harry Potter
   icons:
-  - name: ! "⚡️"
-  - name: ! "🧙‍"
+  - emoji: ! "⚡️"
+  - emoji: ! "🧙‍"
 - name: Terminator
   icons:
-  - name: ! "🤖"
-  - name: ! "☠️"
+  - emoji: ! "🤖"
+  - emoji: ! "☠️"
 - name: StarTrek
   icons:
-  - name: ! "🚀"
-  - name: ! "💫"
+  - emoji: ! "🚀"
+  - emoji: ! "💫"
 - name: Titanic
   icons:
-  - name: ! "🚤"
-  - name: ! "📌"
+  - emoji: ! "🚤"
+  - emoji: ! "📌"
 - name: Psycho
   icons:
-  - name: ! "🔪"
-  - name: ! "🚿"
+  - emoji: ! "🔪"
+  - emoji: ! "🚿"
 `

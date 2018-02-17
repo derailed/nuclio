@@ -13,7 +13,7 @@ func TestLoadFile(t *testing.T) {
 
 	assert.Equal(t, len(data.Movies), 2)
 	assert.Equal(t, "m1", data.Movies[0].Name)
-	assert.Equal(t, "ic1", data.Movies[0].Icons[0].Name)
+	assert.Equal(t, "ic1", data.Movies[0].Icons[0].Emoji)
 }
 
 func TestLoadFileFail(t *testing.T) {
@@ -27,7 +27,7 @@ func TestLoadMem(t *testing.T) {
 
 	assert.Equal(t, len(data.Movies), 9)
 	assert.Equal(t, "Home Alone", data.Movies[0].Name)
-	assert.Equal(t, "🏡", data.Movies[0].Icons[0].Name)
+	assert.Equal(t, "🏡", data.Movies[0].Icons[0].Emoji)
 }
 
 func TestRandMovie(t *testing.T) {

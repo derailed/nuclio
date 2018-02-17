@@ -1,9 +1,9 @@
 movies:
 - name: m1
   icons:
-  - name: ic1
-  - name: ic2
+  - emojigs: ic1
+  - emoji: ic2
 - name: m2
   icons:
-  - name: ic11
-  - name: ic21
+  - emoji: ic11
+  - emoji: ic21
