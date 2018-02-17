@@ -25,7 +25,7 @@ func TestLoadMem(t *testing.T) {
 	data, err := iconoflix.LoadMem()
 	assert.Nil(t, err)
 
-	assert.Equal(t, len(data.Movies), 3)
+	assert.Equal(t, len(data.Movies), 9)
 	assert.Equal(t, "Home Alone", data.Movies[0].Name)
 	assert.Equal(t, "🏡", data.Movies[0].Icons[0].Name)
 }

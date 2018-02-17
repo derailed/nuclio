@@ -75,13 +75,38 @@ movies:
 - name: Home Alone
   icons:
   - name: ! "🏡"
-  - name: ! "🍣"
+  - name: ! "🛀"
+- name: Planes, Trains And Automobiles
+  icons:
+  - name: ! "✈️"
+  - name: ! "🚂"
+  - name: ! "🚘"
+- name: The Mechanic
+  icons:
+  - name: ! "🚙"
+  - name: ! "🔧"
+- name: Thor
+  icons:
+  - name: ! "⚡️"
+  - name: ! "🔨"
+- name: Harry Potter
+  icons:
+  - name: ! "⚡️"
+  - name: ! "🧙‍"
 - name: Terminator
   icons:
-  - name: ! "🏡"
-  - name: ! "👻"
-- name: Ghost
+  - name: ! "🤖"
+  - name: ! "☠️"
+- name: StarTrek
   icons:
-  - name: ! "🏡"
-  - name: ! "👻"
+  - name: ! "🚀"
+  - name: ! "💫"
+- name: Titanic
+  icons:
+  - name: ! "🚤"
+  - name: ! "📌"
+- name: Psycho
+  icons:
+  - name: ! "🔪"
+  - name: ! "🚿"
 `
