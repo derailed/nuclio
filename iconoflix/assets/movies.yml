@@ -1,7 +1,7 @@
 movies:
 - name: m1
   icons:
-  - emojigs: ic1
+  - emoji: ic1
   - emoji: ic2
 - name: m2
   icons:

@@ -1,6 +1,7 @@
 package iconoflix_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/derailed/nuclio/iconoflix"
@@ -10,6 +11,7 @@ import (
 func TestLoadFile(t *testing.T) {
 	data, err := iconoflix.LoadFile("./assets/movies.yml")
 	assert.Nil(t, err)
+	fmt.Println(data)
 
 	assert.Equal(t, len(data.Movies), 2)
 	assert.Equal(t, "m1", data.Movies[0].Name)
@@ -22,7 +24,7 @@ func TestLoadFileFail(t *testing.T) {
 }
 
 func TestLoadMem(t *testing.T) {
-	data, err := iconoflix.LoadMem()
+	data, err := iconoflix.LoadMem("v1")
 	assert.Nil(t, err)
 
 	assert.Equal(t, len(data.Movies), 9)
@@ -31,6 +33,6 @@ func TestLoadMem(t *testing.T) {
 }
 
 func TestRandMovie(t *testing.T) {
-	m := iconoflix.RandMovie()
+	m := iconoflix.RandMovie("v1")
 	assert.NotEqual(t, "", m.Name)
 }

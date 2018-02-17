@@ -13,12 +13,6 @@ var corpus Movies
 // Seeds randomizer and movie db
 func init() {
 	rand.Seed(time.Now().UTC().UnixNano())
-
-	var err error
-	corpus, err = LoadMem()
-	if err != nil {
-		panic(err)
-	}
 }
 
 type (
@@ -40,13 +34,15 @@ type (
 )
 
 // RandMovie picks a random movie...
-func RandMovie() Movie {
+func RandMovie(v string) Movie {
+	corpus, _ := LoadMem(v)
+
 	return corpus.Movies[rand.Intn(len(corpus.Movies))]
 }
 
 // LoadMem the movie database from memory
-func LoadMem() (d Movies, err error) {
-	err = yaml.Unmarshal([]byte(MOVIES), &d)
+func LoadMem(s string) (d Movies, err error) {
+	err = yaml.Unmarshal([]byte(store[s]), &d)
 	return
 }
 
@@ -70,7 +66,8 @@ func LoadFile(path string) (Movies, error) {
 // ----------------------------------------------------------------------------
 
 // MOVIES in memory movie corpus
-const MOVIES = `
+var store = map[string]string{
+	"v1": `
 movies:
 - name: Home Alone
   icons:
@@ -109,4 +106,12 @@ movies:
   icons:
   - emoji: ! "🔪"
   - emoji: ! "🚿"
-`
+`,
+	"v2": `
+movies:
+- name: Cobra
+  icons:
+  - emoji: ! "🏡"
+	- emoji: ! "🛀"
+`,
+}
