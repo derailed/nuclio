@@ -15,8 +15,7 @@ func Handler(context *nuclio.Context, event nuclio.Event) (interface{}, error) {
 	log.Printf("Go called with %s", string(event.GetBody()))
 	log.Println(event.GetID(), event.GetFields(), event.GetPath(), event.GetMethod())
 
-	movie := randMovie()
-	raw, err := json.Marshal(movie)
+	raw, err := json.Marshal(iconoflix.randMovie())
 	if err != nil {
 		return "", fmt.Errorf("Doh! something went wrong %v", err)
 	}
