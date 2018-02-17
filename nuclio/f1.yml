@@ -1,0 +1,11 @@
+apiVersion: nuclio.io/v1
+kind:       Function
+metadata:
+  name: yo
+  lebels:
+    app: yo
+spec:
+  decription: "Sample Yo function"
+  runtime: golang
+  handler: Handler
+  image: quay.io/imhotepio/yo:latest

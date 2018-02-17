@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-secret
+  namespace: nuclio
+type: kubernetes.io/dockercfg
+data:
+  .dockercfg: eyJxdWF5LmlvIjp7InVzZXJuYW1lIjoiZGVyYWlsZWQiLCJwYXNzd29yZCI6ImZlcm5hbmR+MSIsImVtYWlsIjoiZmVybmFuZC5nYWxpYW5hQGdtYWlsLmNvbSIsImF1dGgiOiJaR1Z5WVdsc1pXUTZabVZ5Ym1GdVpINHgifX0=

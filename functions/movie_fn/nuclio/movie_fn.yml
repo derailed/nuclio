@@ -1,0 +1,19 @@
+apiVersion: nuclio.io/v1
+kind:       Function
+metadata:
+  name:      f1
+  namespace: nuclio
+  lebels:
+    name:       f1
+    serverless: nuclio
+    version:    latest
+spec:
+  decription: F1 function
+  runtime:    golang
+  handler:    Handler
+  image:      quay.io/imhotepio/f1:0.0.1
+  replicas:   1
+  resources:
+    limit:
+      memory: 64Mi
+      cpu:    250
