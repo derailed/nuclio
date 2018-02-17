@@ -8,7 +8,14 @@ import (
 	"github.com/go-yaml/yaml"
 )
 
-var corpus Movies
+var (
+	corpus Movies
+
+	store = map[string]string{
+		"v1": boxOffice,
+		"v2": bMovies,
+	}
+)
 
 // Seeds randomizer and movie db
 func init() {
@@ -66,8 +73,9 @@ func LoadFile(path string) (Movies, error) {
 // ----------------------------------------------------------------------------
 
 // MOVIES in memory movie corpus
-var store = map[string]string{
-	"v1": `
+
+const (
+	boxOffice = `
 movies:
 - name: Home Alone
   icons:
@@ -106,12 +114,13 @@ movies:
   icons:
   - emoji: ! "🔪"
   - emoji: ! "🚿"
-`,
-	"v2": `
+`
+
+	bMovies = `
 movies:
 - name: Cobra
   icons:
-  - emoji: ! "🏡"
-	- emoji: ! "🛀"
-`,
-}
+  - emoji: ! "🕶"
+  - emoji: ! "🚔"
+`
+)
